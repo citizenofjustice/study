@@ -18,35 +18,60 @@ footer{
     text-align: center;
 }
 
-#elem1 {
+#head {
     position: relative;
 	margin: 0 auto;
 	width:400px;
-	height: 300px;
-	background-color: #FF8888;
+	height: 400px;
+    border-radius: 50%;
+	background-color: #78e413;
 }
-#elem2 {
-    position: absolute;
-    top: 30px;
-    left: 30px;
+#head > div:not(:nth-child(2)){
+    background-color: #ffffff;
+}
+.eye {
     height: 75px;
     width: 75px;
-	background-color: #7E89EB;
+    border-radius: 50%;
+    top: 70px;
 }
-#elem3 {
+.eye.left{
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    left: 70px;
     
-    height: 75px;
-    width: 75px;
-	background-color: #7E89EB;
 }
-footer #elem1+p{
-    text-align: left;
-    width:fit-content;
-    background-color: chartreuse;
+.eye.right{
+    position: absolute;
+    right: 70px;
 }
+
+#nose {
+    position: absolute;
+    top: 175px;
+    left: 175px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.mouth.bottom{
+    position: relative;
+    top: 170px;
+    left: 100px;
+    width: 200px;
+    height: 150px;
+    border-radius: 0 0 50% 50%;
+    
+}
+.mouth.top{
+    position: relative;
+    top: -50px;
+    left: 80px;
+    width: 240px;
+    height: 200px;
+    border-radius: 0 0 50% 50%;
+    background-color:#78e413;
+}
+
 
 section{
     display: flex;
