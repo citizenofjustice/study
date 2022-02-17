@@ -1,0 +1,77 @@
+ul {
+    padding: 0px;
+    margin: 0px; }
+
+
+#menu4 ul { list-style-type: none; width: 200px; }
+#menu4 li { margin-bottom: 5px; }
+#menu4 a:link, #menu4 a:visited {
+    text-decoration: none;
+    font: 13pt Arial;
+    font-weight: bold;
+    outline: 1px solid rgb(40, 150, 240);
+    display: block;
+    line-height: 30px;
+    padding: 0px 5px;
+    color: white;
+    background-color:rgb(40, 150, 240); }
+#menu4 a:hover, #menu4 a.active {
+    color: rgb(35, 49, 255);
+    background: white url("images/plane.png") no-repeat 90% center/15%; }
+
+
+#menu5 ul{
+    list-style-type: none; }
+#menu5 a:link, #menu5 a:visited{
+    color: blue;
+    background-color: white;
+    text-decoration: none;
+    font: 13pt Arial;
+    outline: 1px solid black;
+    float:left;
+    display: block;
+    margin-right: 5px;
+    padding: 0px 5px; }
+#menu5 a:hover, #menu5 a:active{
+    color:red;}
+
+
+#menu6 ul{
+    list-style-type: none; }
+#menu6 li{
+    display: inline-block; }
+#menu6 a:link, #menu6 a:visited{
+    color: blue;
+    background-color: white;
+    text-decoration: none;
+    font: 13pt Arial;
+    outline: 1px solid black;
+    margin-right: 5px;
+    padding: 5px 5px; }
+#menu6 a:hover, #menu6 a.active{
+    background-color:dimgray;
+    color:white; }
+
+
+#menu7 ul{ list-style-type: none; }
+#menu7 li{display: inline-block; margin: 0px 5px;}
+#menu7 a{ padding-top: 40px; display: block; font: 13pt Times; }
+#menu7 a:link, #menu7 a:visited{ color:rgb(31, 30, 29); text-decoration: none; }
+#menu7 a:hover, #menu7 a:active{ color:dodgerblue; text-decoration: none;}
+#menu7 .i1 a:link, #menu7 .i1 a:visited{ background: url("images/boat.png") no-repeat center/75%; }
+#menu7 .i2 a:link, #menu7 .i2 a:visited{ background: url("images/car.png") no-repeat center /65%; }
+#menu7 .i3 a:link, #menu7 .i3 a:visited{ background: url("images/train.png") no-repeat center/30%; }
+#menu7 .i4 a:link, #menu7 .i4 a:visited{ background: url("images/plane1.png") no-repeat center/35%; }
+#menu7 .i5 a:link, #menu7 .i5 a:visited{ background: url("images/walk.png") no-repeat center/15%; }
+#menu7 .i1 a:hover{ background: url("images/boatB.png") no-repeat center/75%; }
+#menu7 .i2 a:hover{ background: url("images/carB.png") no-repeat center/65%; }
+#menu7 .i3 a:hover{ background: url("images/trainB.png") no-repeat center/30%; }
+#menu7 .i4 a:hover{ background: url("images/plane1B.png") no-repeat center/35%; }
+#menu7 .i5 a:hover{ background: url("images/walkB.png") no-repeat center/15%; }
+
+
+#menu8 div{ margin: 0 5px; padding: 0 10px; background-color:darkorange; }
+#menu8 ul{ list-style-type: none; font: 16px Courier;}
+#menu8 li{ display: inline-block; margin-right: 5px; }
+#menu8 a{ display: block; text-decoration: none; line-height: 30px; padding: 0 5px; color: white;}
+#menu8 a:hover, #menu8 a:active{ background-color: rgb(238, 82, 34); }

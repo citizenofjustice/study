@@ -1,0 +1,87 @@
+p {
+    color: brown;
+}
+
+img {
+    width: 15%;
+}
+
+table {
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#text {
+    
+    padding-left: 50px;
+    width: 250px;
+    outline: 5px solid yellowgreen;
+    border: 5px solid black;
+}
+
+.schoolroom {
+    text-align: center;
+    color:rgb(0, 0, 0);
+}
+
+div.background {
+    height: 100px;
+    width: 300px;
+    margin-bottom: 10px;
+    background-color: cadetblue;
+    background-image:url("google logo.png");
+    background-size: 15%;
+    background-attachment: fixed;
+}
+
+#less {
+    box-sizing:border-box;
+    height: 100px;
+    width: 300px;
+    padding-left: 50px;
+    border: 20px solid red;
+    background-color: gray;
+}
+
+h2.schoolroom {
+    text-align: right;
+    color:blue;
+    border-style: dotted;
+    text-decoration: underline;
+    background-color: blanchedalmond;
+}
+
+h3.schoolroom {
+    color:darkgreen;
+    text-align: center;
+}
+
+ul {
+    list-style-type:upper-roman;
+}
+
+ol {
+    
+}
+
+td {
+    text-decoration: line-through;
+    
+}
+
+
+a:link {
+    color:crimson;
+}
+
+a:visited {
+    font-style: italic;
+}
+
+a:hover {
+    text-decoration: line-through;
+}
+
+a:active {
+    color: darkolivegreen;
+}

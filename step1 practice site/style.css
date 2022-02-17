@@ -1,0 +1,46 @@
+body{ margin: 0; padding: 0; }
+#wrapper{ margin: 0 auto ; border: 1px solid teal;}
+
+#site{
+    width: 40%;
+    min-width: 400px;
+    max-width: 900px;
+    border:2px dashed green;
+    border-radius: 20px;
+    margin: 0 auto; }
+
+#menu ul{ border-radius: 18px 18px 0 0;  margin: 0; padding:0; list-style-type: none; background-color: rgb(63, 57, 57); }
+#menu li{ display: inline-block; margin: 0px 5px; }
+#menu a{ border-radius: 10px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-decoration: none; display: block; line-height: 50px; padding: 0 5px; }
+#menu a:link, #menu a:visited{ color: white; }
+#menu a:hover{ background-color: white; color: rgb(63, 57, 57) }
+
+#site1 { text-align: justify; }
+#site1 div.text{ padding: 0 20px; margin-bottom: 20px; }
+#site1 h2{ font: 16pt Times; font-weight: bold; }
+#site1 a{ text-decoration: none; }
+#site1 a:hover{ text-decoration: underline; }
+#site1 a.pink:link, #site1 a.pink:visited{  color: deeppink;}
+#site1 a.pink:hover{ color: black; text-decoration: underline;}
+#site1 a.green:link, #site1 a.green:visited{color:green; font-weight: bold;}
+#site1 a.green:hover{color:rgb(241, 76, 112); font-weight: bold; }
+#site1 a.more:link, #site1 a.more:visited {color: deeppink;}
+#site1 a.more:hover{ text-decoration: none; padding: 5px; border-radius:5px;  background:deeppink; color: white;}
+#site1 p.right{ text-align: right; font-weight: bold; padding-right: 20px;}
+#site1 img{ float: left; border: 1px solid black; margin-right: 10px; }
+
+#foorer{ 
+    width: 40%;
+    min-width: 400px;
+    max-width: 900px;
+    margin: 0 auto; }
+#footer ul{
+    text-align: center;
+    padding: 0 20px;
+    list-style-type: none; }
+#footer li{
+    display: inline-block;
+    margin: 0 5px; }
+#footer a{ text-decoration: none; font: 10pt Arial; font-weight: bolder;}
+#footer a:link, #footer a:visited{ color: rgb(196, 82, 40); }
+#footer a:hover{ text-decoration: underline; color: rgb(85, 74, 69)}
