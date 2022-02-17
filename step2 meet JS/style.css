@@ -19,32 +19,30 @@ footer{
 }
 
 #elem1 {
-	width: 100px;
-	height: 100px;
-	margin-bottom: 20px;
+    position: relative;
+	margin: 0 auto;
+	width:400px;
+	height: 300px;
 	background-color: #FF8888;
 }
 #elem2 {
-    position: relative;
-    top: -50px;
-    left: 40px;
-
-	width: 100px;
-	height: 100px;
-	margin-bottom: 20px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 75px;
+    width: 75px;
 	background-color: #7E89EB;
 }
 #elem3 {
-    position: relative;
-    top: -100px;
-    left: 80px;
-
-	width: 100px;
-	height: 100px;
-	margin-bottom: 20px;
-	background-color: #4DEE99;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    
+    height: 75px;
+    width: 75px;
+	background-color: #7E89EB;
 }
-footer #elem3+p{
+footer #elem1+p{
     text-align: left;
     width:fit-content;
     background-color: chartreuse;
