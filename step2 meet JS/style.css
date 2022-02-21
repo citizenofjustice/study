@@ -88,7 +88,7 @@ section{
 
 
 #left-sidebar{
-    width: 200px;
+    width: 400px;
     margin-right: 20px;
     padding: 5px 20px;
     outline: 1px solid black;
@@ -103,6 +103,16 @@ section{
     margin-left: 20px;
     padding: 5px 20px;
     outline: 1px solid black;
+}
+
+
+#lt{
+    float: left;
+    margin-right: 10px;
+}
+#rt{
+    float: right;
+    margin-left: 10px;
 }
 
 .block{
@@ -146,4 +156,16 @@ h1{
     text-align: justify;
     font-size: 10pt;
     text-indent: 30px;
+    border: 1px solid orange;
+    padding: 10px;
+}
+
+.parent{
+    border: 1px solid orange;
+}
+.parent img{
+    float: right;
+}
+.clearfix{
+    clear: both;
 }
