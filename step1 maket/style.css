@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section .center{ text-align: center; }
+section .just{ text-align: justify; }
+
+section .green{ background-color: green; }
+section .red{ background-color: red; }
+section .peach{ background-color: peru; }
