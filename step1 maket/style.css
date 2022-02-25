@@ -2,10 +2,25 @@
     margin: 0;
     padding: 0;
 }
-
+footer{ height: 20px;}
 section .center{ text-align: center; }
-section .just{ text-align: justify; }
+section .just{ text-align: justify; padding: 50px 0; }
 
-section .green{ background-color: green; }
-section .red{ background-color: red; }
-section .peach{ background-color: peru; }
+section span{
+    display: block;
+    margin: auto;
+    width: 800px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section .green{ background-color: hsl(120, 40%, 45%); }
+section .red{ background-color: rgb(231, 39, 39); }
+section .peach{ background-color: rgb(230, 151, 73); }
+
+.green > *, .red > *, .peach > * { color: white; } /*белый цвет для всего содержимого цветовых блоков*/
+.green, .red{ padding: 20px 0; }
+h1{ font-size:26pt; padding-bottom: 5px;}
+h3{ font-size:18pt; text-align: center; padding-bottom: 10px;}
+.green p{ font-size: 16pt; padding-top:5px; }
+.peach p{ font-size: 10pt; padding: 50px 0 10px;}
+div span ul{ list-style-type:decimal; }
