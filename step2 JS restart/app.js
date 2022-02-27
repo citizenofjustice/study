@@ -79,3 +79,48 @@
 // console.log(!!true); // НЕНЕtrue - двойное отрицание = true
 
     //8 функции
+// function calculateYear(year) {
+//     return(2022 - year);
+// }
+// const yearsGoneBy = calculateYear(1996);
+// console.log(yearsGoneBy)
+
+
+// function logInfoAbout(fullName, year) {
+//     let Age = calculateYear(year);
+//     if (Age > 0) {
+//         console.log(fullName + 'c вашего рождения проло ' + Age + ' лет.')
+//     }
+//     else {
+//         console.log('Этот человек находится в будущем')
+//     }
+// }
+// logInfoAbout('Краснов Андрей ', 1996);
+// logInfoAbout('Семенова Ия ', 1999);
+// logInfoAbout('Краснова Нажежда ', 1968);
+// logInfoAbout('Краснова Нажежда ', 2968);
+
+    //9 массивы
+// const cars = ['mazda', 'renault', 'suzuki']; //Корректный вариант
+// //const cars = new Array['mazda', 'renault', 'suzuki']; // более полный вариант
+// console.log(cars);
+// console.log(cars.length);
+// console.log(cars[2]);
+// cars[0]='porshe';
+// cars[3]='mazda';
+// console.log(cars);
+
+    //10 итерация массивов - циклы
+// const cars = ['porshe', 'mazda', 'renault', 'suzuki']; //Корректный вариант
+// for (let i = 0; i < cars.length; i++) {
+//     console.log(i);
+//     console.log(cars[i]);
+// }
+// for (let car of cars) {
+//     console.log(car);
+// }
+
+    //11 объекты
+const person = {
+    
+}
