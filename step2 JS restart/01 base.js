@@ -128,9 +128,14 @@ const person = {
     languages: ['RU', 'EN', 'UA', 'DE'],
     hasFiance: true,
     greet: function() {
-        console.log('greet')
+        console.log('greet from person')
     }
 }
 
 console.log(person.year);
-person.greet()
+console.log(person['firstName']);
+const key = 'languages';
+console.log(person[key]);
+console.log(person);
+person.isProgrammer = true;
+person.greet();
