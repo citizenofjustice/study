@@ -122,5 +122,15 @@
 
     //11 объекты
 const person = {
-    
+    firstName: 'Andrey',
+    lastName: 'Krasnov',
+    year: 1996,
+    languages: ['RU', 'EN', 'UA', 'DE'],
+    hasFiance: true,
+    greet: function() {
+        console.log('greet')
+    }
 }
+
+console.log(person.year);
+person.greet()
