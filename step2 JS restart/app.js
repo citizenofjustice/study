@@ -28,12 +28,47 @@
 
 
     //3 Стрелочные функции
-function greet(name) {
-    console.log('Привет - ' + name)
-}
-greet('Ия')
+// function greet(name) {
+//     console.log('Привет - ' + name)
+// }
+// greet('Ия')
 
-const arrow = (name) => {
-    console.log('Привет - ' + name)
-}
-arrow('Андрей')
+// const arrow = (name, age) => {
+//     console.log('Привет - ' + name, age)
+// }
+// const arrow2 = (name) => console.log('Привет - ' + name)
+
+// arrow('Андрей', 26)
+// arrow2('Андрей2')
+
+// const pow2 = (num) => num ** 2
+
+// console.log(pow2(30))
+
+
+    //4 Параметры по умолчанию
+// const sum1 = (a, b) => a + b
+// console.log('sum1 =', sum1(2)) // не хватает параметра в функии, поэтому результат NaN
+
+// const sum2 = (a, b = 0) => a + b  //задаем параметру b значение по умолчанию 
+// console.log('sum2 =', sum2(2))
+
+// const sum3 = (a, b = a * 2) => a + b  //задаем параметру b значение по умолчанию 
+// console.log('c параметром по умолчанию. sum3 =', sum3(2))
+// console.log('с перезацписанным параметром b. sum3 =', sum3(2, 8))
+
+// function sumAll(...all) {
+//     console.log(all)
+//     let result = 0
+//     for (let num of all) {
+//         result += num
+//     }
+//     return result
+// }
+
+// const res = sumAll(1,2,3,4,5,6,7)
+// console.log(res)
+
+
+    //Замыкание
+    //https://youtu.be/Bluxbh9CaQ0?t=10828
