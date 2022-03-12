@@ -1,59 +1,33 @@
-// const num = 42; //целое число
-// const float = 42.42; //десятичное число
-// const pow = 10e3;
-// console.log(pow);
-// console.log('Максимальный int', Number.MAX_SAFE_INTEGER);
-// console.log('Math.pow', Math.pow(2, 53)-1);
-// console.log('Минимальный int', Number.MIN_SAFE_INTEGER);
-// console.log('Максимальный значение', Number.MAX_VALUE);
-// console.log('Минимальное значение', Number.MIN_VALUE);
-// console.log('+ бесконечность', Number.POSITIVE_INFINITY, '2/0', 2/0);
-// const weird = 0/'string'
-// console.log('NaN', weird) //Not a number
-// console.log('weird', Number.isNaN(weird))
-// console.log('42 это NaN?', Number.isNaN(42))
-// console.log('бесконечноть имеет финальное значение?', Number.isFinite(Infinity))
-// console.log('42 конечное число?', Number.isFinite(42))
+const firstName = 'Андрей'
+// const age = 26
 
-// const stringInt = '42'
-// const stringFloat = '42.42'
-// console.log(Number.parseInt(stringInt) + 2)
-// console.log(Number.parseInt(stringFloat) + 2)
-// console.log(+stringInt + 2)
-// console.log(+stringFloat + 2)
-// console.log(Number.parseFloat(stringFloat) + 2)
-
-// console.log(0.4 + 0.2)  //0.6
-// console.log((4/10) + (2/10))  //0.6
-// console.log(parseFloat((0.4 + 0.2).toFixed(1)))  //0.6
-
-
-    //BigInt
-// console.log(typeof 6467831689454784564684651658n)  // n в конце значит BigInt
-// console.log(6467831689454784564684651658n - 646783168945478456468465165n)
-// console.log(5n / BigInt(2))  // =2.5n Но получится 2n так как это bigINT
-
-    //Math
-// console.log(Math.E)
-// console.log(Math.PI)
-// console.log(parseFloat(Math.PI.toFixed(2)))
-// console.log(Math.sqrt(25))  //квадратный корень корень
-// console.log(Math.pow(2, 5))  //возведение в степень
-// console.log(Math.abs(-42))  //модуль числа
-// console.log(Math.max(12, 54, 669, 1, -845))  //поиск максимального
-// console.log(Math.min(12, 54, 669, 1, -845))  //поиск минимального
-// console.log(Math.floor(4.9))  //округление в меньшую сторону
-// console.log(Math.ceil(4.9))  //округление в большую сторону
-// console.log('4.9 ', Math.round(4.9), '  4.2   ', Math.round(4.2), '  4.5   ', Math.round(4.5))  //если больше или равно .5 то округляет в большую сторону
-// console.log(Math.trunc(4.9))  //возврат целой части числа
-// console.log(Math.random())
-    
-    //Использование Math
-// function getRandomBetween(min, max) {
-//     let rng = Math.floor(Math.random() * (max - min + 1) + min)
-//     return rng
+// function getAge() {
+//     return age
 // }
+// const output = 'Привет, меня зовут ' + firstName + ' и мой возраст ' + age + 'лет.'
+// const output = `Привет, меня зовут ${firstName} и мой возраст ${getAge()} лет.`
+// const output = `Привет, меня зовут ${firstName} и мой возраст ${age < 20 ? '<20>': '>20'} лет.`
+// const output = `
+//     <div>This is div</div>
+//     <p>this is 0</p>
+// `
+// console.log(output)
 
-// console.log(getRandomBetween(0, 10))
+// console.log(firstName.length)
+// console.log(firstName.toUpperCase())
+// console.log(firstName.toLowerCase())
+// console.log(firstName.charAt(2))
+// console.log(firstName.indexOf('др')) //поиск с какого символа начинается данная подстрока. первый символ имеет 0 индекс
+// console.log(firstName.indexOf('влад')) // -1 значит что такой подстроки нет
+// console.log(firstName.startsWith('Анд'))
+// console.log(firstName.startsWith('анд'))
+// console.log(firstName.toLowerCase().startsWith('анд'))
+// console.log(firstName.repeat(3))
 
-//https://youtu.be/Bluxbh9CaQ0?t=8485
+// const string = '    password     '
+
+// console.log(string)
+// console.log(string.trim())
+// console.log(string.trimLeft())
+
+
