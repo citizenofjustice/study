@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* --------------------------- */
+header{
+    outline: 1px solid black;
+    width: 1300px;
+    height: 80px;
+    margin: auto;
+    display: block;
+}
+
+nav .container {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+    min-height: 3rem;
+    justify-content: space-between;
+}
+
+.logo, .contact {
+    outline: 1px solid red;
+    height: 80px;
+    width: fit-content;
+}
+
+.logo * img {
+    max-height: 5rem;
+    border-radius: 15%;
+}
+.meetNgreet * img {
+    max-height: 250px;
+    border-radius: 50%;
+}
+
+.contactButton {
+    outline: 1px solid rgb(87, 87, 243);
+    background-color: rgb(45, 131, 230);
+    color:aliceblue;
+    font-weight: bolder;
+    padding: 5px;
+    margin: 20px 0;
+    border-radius: 10%;
+}
+
+/*-----------------------*/
+section > .container {
+    /* background-color: burlywood; */
+    border: 1px solid grey;
+    padding: 30px 0;
+    text-align: center;
+    margin: auto;
+    width: 1000px;
+}
+
+h1 {
+    font: italic bold 25px/40px Arial;
+}
+h2 {
+    font: normal 16px/20px Times;
+}
+.about * h2 {
+    margin: auto;
+    width: 50%;
+    text-align: justify;
+}
+
+.meetNgreet {
+    outline: 1px solid black;
+}
+
+.about {
+    background-color: rgb(45, 131, 230);
+    height: 400px;
+}
