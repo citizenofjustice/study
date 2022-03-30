@@ -33,9 +33,16 @@ nav .container {
     max-height: 5rem;
     border-radius: 15%;
 }
-.meetNgreet * img {
+.avatar > img {
     max-height: 250px;
     border-radius: 50%;
+}
+.workplace * img {
+    max-block-size: 300px;
+}
+
+.avatar, .workplace {
+    margin-top: 50px;
 }
 
 .contactButton {
@@ -49,10 +56,8 @@ nav .container {
 }
 
 /*-----------------------*/
-section > .container {
-    /* background-color: burlywood; */
+.container {
     border: 1px solid grey;
-    padding: 30px 0;
     text-align: center;
     margin: auto;
     width: 1000px;
@@ -64,17 +69,20 @@ h1 {
 h2 {
     font: normal 16px/20px Times;
 }
+
 .about * h2 {
     margin: auto;
     width: 50%;
     text-align: justify;
+    padding: 20px;
 }
 
 .meetNgreet {
     outline: 1px solid black;
+    height: 970px;
 }
 
 .about {
     background-color: rgb(45, 131, 230);
-    height: 400px;
+
 }
