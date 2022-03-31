@@ -116,3 +116,8 @@ h2 {
     height: 500px;
     padding: 0 25px;
 }
+
+.column > img {
+    margin-top: 20px;
+    max-block-size: 70px;
+}
