@@ -8,7 +8,7 @@
 
 /* --------------------------- */
 header{
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     width: 1300px;
     height: 80px;
     margin: auto;
@@ -24,7 +24,7 @@ nav .container {
 }
 
 .logo, .contact {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     height: 80px;
     width: fit-content;
 }
@@ -57,7 +57,7 @@ nav .container {
 
 /*-----------------------*/
 .container {
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     text-align: center;
     margin: auto;
     width: 1000px;
@@ -71,21 +71,39 @@ h1 {
 .about * h1 { font-size: 28pt; }
 .skills * h1 { font-size: 24pt; }
 h2 {
+    padding: 15px 0 0;
+    color:#2d83e6;
+}
+h3 {
     padding: 5px 0;
     font: normal 16px/20px;
     font-family: 'Oswald', sans-serif;
     font-size: 14pt;
+    font-weight: 500;
+}
+p {
+    padding: 0 25px;
+    min-height: 120px;
+    margin: 10px 0 15px;
+    font: normal 16px/20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12pt;
+    font-weight: 300;
 }
 
-.about * h2 {
+.about * h3 {
     margin: auto;
     width: 50%;
     text-align: justify;
     padding: 20px;
 }
+.skills * h3 {
+    color:rgb(45, 131, 230);
+    font-weight: 600;
+}
 
 .meetNgreet {
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     height: 860px;
 }
 
@@ -100,7 +118,6 @@ h2 {
 .skills > .container {
     position: relative;
     bottom: 100px;
-    /* z-index: 2; */
     background-color:white;
     border-radius: 20px;
     
@@ -110,11 +127,12 @@ h2 {
     justify-content: space-between;
 }
 .column {
-    border: 1px solid orange;
-    display: table-cell;
+    display: block;
+    border: 1px solid rgb(197, 197, 197);
     width: 300px;
-    height: 500px;
+    min-height: 500px;
     padding: 0 25px;
+    box-shadow: 0 5px 5px 0 rgb(233 240 243 / 60%);
 }
 
 .column > img {
