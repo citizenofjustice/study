@@ -9,7 +9,7 @@
 /* --------------------------- */
 header{
     /* outline: 1px solid black; */
-    width: 1300px;
+    width: 1000px;
     height: 80px;
     margin: auto;
     display: block;
@@ -24,7 +24,6 @@ nav .container {
 }
 
 .logo, .contact {
-    /* outline: 1px solid red; */
     height: 80px;
     width: fit-content;
 }
@@ -45,19 +44,23 @@ nav .container {
     margin: 75px 0;
 }
 
-.contactButton {
+.button {
+    display: block;
     outline: 1px solid rgb(87, 87, 243);
     background-color: rgb(45, 131, 230);
     color:aliceblue;
     font-weight: bolder;
-    padding: 5px;
+    padding: 10px;
     margin: 20px 0;
-    border-radius: 10%;
+    border-radius: 25px;
+    height: 30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
 }
 
 /*-----------------------*/
 .container {
-    /* border: 1px solid grey; */
     text-align: center;
     margin: auto;
     width: 1000px;
@@ -68,8 +71,9 @@ h1 {
     font-family: 'Amatic SC', cursive;
 }
 .meetNgreet * h1 { font-size: 34pt; }
-.about * h1 { font-size: 28pt; }
+.about * h1, .projects * h1 { font-size: 28pt; }
 .skills * h1 { font-size: 24pt; }
+
 h2 {
     padding: 15px 0 0;
     color:#2d83e6;
@@ -81,7 +85,7 @@ h3 {
     font-size: 14pt;
     font-weight: 500;
 }
-p {
+.skills * p {
     padding: 0 25px;
     min-height: 120px;
     margin: 10px 0 15px;
@@ -118,24 +122,83 @@ p {
 .skills > .container {
     position: relative;
     bottom: 100px;
-    background-color:white;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     
 }
 .skills * .content {
     display: flex;
     justify-content: space-between;
 }
-.column {
+.box {
+    border: 1px solid rgb(228, 228, 228);
+    background-color:white;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px 0 rgb(233 240 243 / 60%);
     display: block;
-    border: 1px solid rgb(197, 197, 197);
+
+}
+.skills * .column {
+    display: block;
     width: 300px;
     min-height: 500px;
     padding: 0 25px;
-    box-shadow: 0 5px 5px 0 rgb(233 240 243 / 60%);
 }
-
+.content .column:not(:last-child) {
+    border-right: 1px solid rgb(228, 228, 228);
+}
 .column > img {
     margin-top: 20px;
     max-block-size: 70px;
+}
+
+.grid .column:not(:nth-child(3n)) {
+    margin-right: 20px;
+}
+    
+.grid > .column {
+    display: inline-block;
+    width: 300px;
+    height: 180px;
+    background-color: grey;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.is-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.column.is-centered > .button{
+    width: 200px;
+}
+
+footer {
+    margin-top: 100px;
+    background-color:#2d83e6;
+}
+footer * p {
+    margin-top: 40px;
+    color: #6fb2ff;
+    font: normal 16px/20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12pt;
+    font-weight: 300;
+}
+.quote{ font-weight: 600; font-size: 20pt; max-width: 600px;}
+.created{ font-weight: 200; font-size: 8pt; height: fit-content;}
+.container.is-centered { padding-bottom: 30px;}
+.socials { margin-top: 30px;
+}
+ul{
+    display: block;
+    list-style-type:none;
+}
+li{
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 50%;
+    line-height: 40px;
+    width: 40px;
+    padding: 5px;
 }
