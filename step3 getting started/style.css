@@ -179,7 +179,7 @@ footer {
 }
 footer * p {
     margin-top: 40px;
-    color: #6fb2ff;
+    color: #9ac9ff;
     font: normal 16px/20px;
     font-family: 'Oswald', sans-serif;
     font-size: 12pt;
@@ -188,17 +188,35 @@ footer * p {
 .quote{ font-weight: 600; font-size: 20pt; max-width: 600px;}
 .created{ font-weight: 200; font-size: 8pt; height: fit-content;}
 .container.is-centered { padding-bottom: 30px;}
-.socials { margin-top: 30px;
+.socials { 
+    margin-top: 20px;
 }
-ul{
-    display: block;
-    list-style-type:none;
+.socials .field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-li{
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }
+.socials a {
+    background-color: transparent;
     display: inline-block;
-    border: 1px solid white;
-    border-radius: 50%;
-    line-height: 40px;
-    width: 40px;
-    padding: 5px;
+
+    margin-inline: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 3px solid #9ac9ff;
+
+}
+.socials a:link, a:visited{
+    text-decoration: none;
+}
+.socials a:hover{
+    color: #2d83e6;
+    background-color: white;
 }
