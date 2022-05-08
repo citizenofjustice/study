@@ -1,0 +1,37 @@
+#main{
+    margin: auto;
+    height: 500px;
+    width: 600px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#in{
+    border: 1px solid orangered;
+    width: 400px;
+    padding: 10px;
+}
+#out{
+    border: 1px solid rgb(0, 30, 255);
+    width: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    border: 1px solid green;
+
+}
+
+button{
+
+}
+
+p{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
