@@ -24,14 +24,15 @@ function addTodo() {
 
 
     var del = document.createElement('button');  //создаем кнопку удаления
-    del.innerHTML = 'x'; //заполняем ее значением
+    del.innerHTML = '<i class="material-symbols-outlined">delete</i>'; //заполняем ее значением
+    del.setAttribute('class', 'material-symbols-outlined');
     item.insertAdjacentElement('afterbegin', del); //вставляем ее в созданный wrapper
     
     var todoTask = document.createElement('p');  //создаем текстовое поле
-    todoTask.innerHTML = todo;  //заполняем текстовое поле значением из поля для ввода
+    todoTask.innerHTML = counter + '. ' + todo;  //заполняем текстовое поле значением из поля для ввода
     item.insertAdjacentElement('afterbegin', todoTask);  //вставляем текстовое поле в блок вывода
 
-    delTodo(del);
+    delTodo(del);  //вызвыаем функцию удаления по нажатию на объект del
 }
 
 //функция удаления по нажатию на элемент
@@ -42,6 +43,7 @@ function delTodo(element) {
     })
 }
 
+//функция отметки выполнененных задач
 todoList.addEventListener('click', function(ev) {
     if (ev.target.tagName === 'P') {
         ev.target.classList.toggle('crossed');
