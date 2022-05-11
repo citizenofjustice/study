@@ -32,6 +32,7 @@ function addTodo() {
     todoTask.innerHTML = counter + '. ' + todo;  //заполняем текстовое поле значением из поля для ввода
     item.insertAdjacentElement('afterbegin', todoTask);  //вставляем текстовое поле в блок вывода
 
+    document.getElementById(task.id).select();  //после добавления получаем фокус на текстовое поле
     delTodo(del);  //вызвыаем функцию удаления по нажатию на объект del
 }
 
