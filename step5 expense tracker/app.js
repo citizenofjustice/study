@@ -4,12 +4,8 @@ const expenseAmount = document.getElementById('amount');
 const form = document.getElementById('textFields');
 const expenseTable = document.getElementById('resultTable');
 const tableTitles = document.querySelector('.titleRow');
+var longRow;
 
-
-function logSubmit(e) {
-    e.preventDefault(); 
-    addExpense();
-}
 
 //функция изменения формата даты (можно улучшить чтобы возвращался тип date)
 function formatDate(x) {
@@ -19,12 +15,10 @@ function formatDate(x) {
 }
 
 function addExpense() {
-    var table = expenseTable.lastChild.children.length;
-    console.log(table);
+    if (expenseTable.firstElementChild.firstChild != tableTitles.nextElementSibling) {
+        longRow.remove();
+    }    
 
-
-    // ready(table);
-    // emptyMsg.parentNode.remove();
     var newRow = expenseTable.insertRow(-1);
     var column1 = newRow.insertCell(0);
     var column2 = newRow.insertCell(1);
@@ -37,37 +31,44 @@ function addExpense() {
     column2.innerHTML = new String (formatDate(expenseDate.value));
     column3.innerHTML = expenseAmount.value;
 
-
     var del = document.createElement('span');  //создаем кнопку удаления
-    del.innerHTML = '<i class="material-symbols-outlined">delete</i>'; //заполняем ее значением
+    del.innerHTML = 'delete'; //заполняем ее значением
     del.setAttribute('class', 'material-symbols-outlined');
     newRow.insertAdjacentElement('beforeend', del)
-    // var row = document.createElement('tr');
-    // row.setAttribute('id', 'row'+rowCounter);
-
-    // var column1 = document.createElement('td');
-    // var column2 = document.createElement('td');
-    // var column3 = document.createElement('td');
-    // column1.setAttribute('class', 'nameColumn');
-    // column2.setAttribute('class', 'dateColumn');
-    // column3.setAttribute('class', 'amountColumn');
-
-    // expenseTable.insertAdjacentElement('beforeend', row);
-    // row.insertCell
-
-    // expenseName.value = column1;
-
+    
+    deleteRow(del);
 }
 
 function ready() {
-    if (tableTitles.parentNode.childElementCount == 1) {
-        var longRow = expenseTable.insertRow(-1);
+    if (tableTitles.nextElementSibling === null) {
+        longRow = expenseTable.insertRow(-1);
+        longRow.setAttribute('class', 'longRow');
         var emptyMsg = longRow.insertCell(0);
         emptyMsg.setAttribute('colspan', '3');
         emptyMsg.innerHTML = '<p class="isCentered">В данный момент добавленных расходов нет, введите показатели выше и добавьте их в таблицу</p>';
     }
-    
 }
 
-expenseTable.addEventListener("DOMContentLoaded", ready());
+function deleteRow(y) {
+    y.addEventListener('click', (event) => {
+        y.parentElement.remove();
+        event.stopPropagation();
+        if (expenseTable.firstElementChild.firstChild != tableTitles.nextElementSibling) {
+            ready();
+        }
+    })
+}
+
+function logSubmit(e) {
+    e.preventDefault(); 
+    addExpense();
+}
+
+// подсчет результата
+// function calcResult() {
+//     const currentDate; 
+// }
+// expenseTable.addEventListener('change', calcResult);
+
+document.addEventListener("DOMContentLoaded", ready());
 form.addEventListener('submit', logSubmit); //ловим событие отправки form
