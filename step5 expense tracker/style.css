@@ -28,7 +28,7 @@ header{ font-size: 20pt;}
     display: flex;
     justify-content: center;
 }
-.textFields{
+#textFields{
     margin: auto;
     display: block;
     width: 800px;
@@ -42,16 +42,16 @@ input{
 }
 h1, h2{ margin: 10px 0;}
 .green{ color: rgb(28, 210, 0); text-shadow:black 1px 1px}
-.textFields > div{ padding: 10px 0;  }
-.textFields * span:first-child{ margin-right: 10px; }
-.textFields .name{ width: 600px;}
-.textFields .amount{ width: 450px;}
-.textFields * button{ font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14pt; border-radius: 7px; background-color: rgb(28, 210, 0); color: white; text-align: center; padding: 5px;}
+#textFields > div{ padding: 10px 0;  }
+#textFields * span:first-child{ margin-right: 10px; }
+#textFields #name{ width: 600px;}
+#textFields #amount{ width: 450px;}
+#textFields * button{ font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14pt; border-radius: 7px; background-color: rgb(28, 210, 0); color: white; text-align: center; padding: 5px;}
 .description{
     font-size: 14pt;
     font-weight: 600;
 }
-table{ background-color: antiquewhite; margin: 20px 0; word-wrap: break-word;}
+table{ border: 1px solid black; background-color: antiquewhite; margin: 20px 0; word-wrap: break-word;}
 .titleRow{ text-align: center;}
 td{ border: 1px solid black; min-height: 20px;}
 .nameColumn{ min-width: 350px; }
