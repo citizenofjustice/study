@@ -29,7 +29,12 @@ function addExpense() {
     
     column1.innerHTML = expenseName.value;
     column2.innerHTML = new String (formatDate(expenseDate.value));
-    column3.innerHTML = expenseAmount.value;
+    column3.innerHTML = expenseAmount.value + ' руб.';
+    
+    expenseName.value = '';
+    expenseDate.value = '';
+    expenseAmount.value = '';
+    expenseName.focus();
 
     var del = document.createElement('span');  //создаем кнопку удаления
     del.innerHTML = 'delete'; //заполняем ее значением
