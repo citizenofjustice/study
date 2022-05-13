@@ -24,7 +24,7 @@
                             <label class="description">
                                 Запись:
                                 <p>
-                                    <textarea id="noteInput" autofocus oninput="elastic(this)" placeholder="Введите текст вашей заметки..."></textarea>
+                                    <textarea id="noteInput" oninput="elastic(this)" autofocus placeholder="Введите текст вашей заметки..."></textarea>
                                </p>
                             </label>
                         </div>
@@ -34,15 +34,9 @@
                     </form>
                 </div>
             </div>
-            <div class="output">
-                <div class="isCentered">
-                    <div class="tmpDiv">
-                        <p class="tmpP">Заметка №1</p>
-                        <div class="shortNote">
-                            <p>wertyuiop[\';lkjhgwertyuiop[\';lkjhgwertyuiop[\';lkjhgwert yuiop[\';lkjhgwertyuiop[\';lkjhgwertyuiop[\';lkjhgwertyuiop[\';lkjhg</p>
-                        </div>
-                        <button>Просмотреть</button>
-                    </div>
+            <div class="output isCentered">
+                <div>
+                    <div class="noteGrid"></div>
                 </div>
             </div>
         </div>
