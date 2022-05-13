@@ -1,0 +1,63 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    text-shadow:rgba(255, 123, 0, 0.718) 1px 1px;
+    /* background-color: rgb(243, 243, 243); */
+}
+header{ font-size: 24pt;}
+.main{
+    min-height: 350px;
+    width: 1000px;
+
+    margin: auto;
+}
+.input, .output{
+    margin: 15px 0;
+    min-height: 150px;
+    width: 1000px;
+    outline: 4px solid rgba(210, 182, 0, 0.599);
+    border-radius: 5px;
+    border-style: ridge;
+}
+.noteText{padding: 10px 0;}
+.isCentered{
+    display: flex;
+    justify-content: center;
+}
+.tmpDiv{
+    border: 1px solid purple;
+    
+}
+.shortNote{
+    border: 1px solid rgb(21, 20, 21);
+    
+}
+button{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14pt;
+    border-radius: 7px;
+    background-color: rgba(255, 123, 0, 0.718);
+    color: black;
+    text-align: center;
+    padding: 5px;
+}
+#noteInput{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14pt;
+    resize: none;
+    width: 800px;
+    min-height: 50px;
+    max-height: 300px;
+}
+h1, h3{ margin: 10px 0;}
+p{ margin: 0; padding: 0;}
+.orange{
+    color: rgba(255, 123, 0, 0.718);
+    text-shadow:rgba(0, 0, 0, 0.718) 1px 1px;
+    font-size: 20pt;
+}
+.description{
+    font-size: 18pt;
+    font-weight: 600;
+}

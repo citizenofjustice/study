@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Заметки</title>
+</head>
+<body>
+    <header class="isCentered">
+        <h1>Заметки</h1>
+    </header>
+    <section class="main">
+        <div class="wrapper">
+            <div class="input">
+                <div class="orange isCentered"><h3>Введите текст заметки</h3></div>
+                <div class="isCentered">
+                    <form class="noteText">
+                        <div>
+                            <label class="description">
+                                Запись:
+                                <p>
+                                    <textarea id="noteInput" autofocus oninput="elastic(this)" placeholder="Введите текст вашей заметки..."></textarea>
+                               </p>
+                            </label>
+                        </div>
+                        <div class="isCentered">
+                            <button id="addButton" type="submit">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="output">
+                <div class="isCentered">
+                    <div class="tmpDiv">
+                        <p class="tmpP">Заметка №1</p>
+                        <div class="shortNote">
+                            <p>wertyuiop[\';lkjhgwertyuiop[\';lkjhgwertyuiop[\';lkjhgwert yuiop[\';lkjhgwertyuiop[\';lkjhgwertyuiop[\';lkjhgwertyuiop[\';lkjhg</p>
+                        </div>
+                        <button>Просмотреть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="app.js"></script>
+</body>
+</html>
