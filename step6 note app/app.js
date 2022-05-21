@@ -1,6 +1,5 @@
 const noteInput = document.getElementById('noteInput');
 const noteGrid = document.querySelector('.noteGrid');
-const wrapper = document.querySelector('.wrapper');
 const form = document.querySelector('.noteText');
 
 
@@ -10,25 +9,25 @@ function elastic(element) {
     var currentHeight = element.style.height;   
     if (currentHeight == '54px') {
         element.style.overflowY = "hidden";
-    } else element.style.overflowY = "scroll"; 
+    } else element.style.overflowY = "scroll";
 }
 
-function showfullNote(x) {
-        var textParent = x.parentElement;
-        var text = textParent.parentNode;
-        var popupNote = text.querySelector('.overflow-ellipsis').innerHTML;
-        console.log(popupNote);
-        
-        var popupDiv = document.createElement('div');
-        popupDiv.setAttribute('class', 'popup');
-        document.body.insertAdjacentElement('afterbegin', popupDiv);
-        
-        var popupContent = document.createElement('div');
-        popupContent.setAttribute('class', 'popupContent');
-        popupDiv.insertAdjacentElement('afterbegin', popupContent);
-        popupContent.innerHTML = '<p class="popupText">' + popupNote + '</p>';
+function showfullNote(y) {
+    var textParent = y.parentElement;
+    var text = textParent.parentNode;
+    var popupNote = text.querySelector('.overflow-ellipsis').innerHTML;
+    // console.log(popupNote);
+    
+    var popupDiv = document.createElement('div');
+    popupDiv.setAttribute('class', 'popup');
+    document.body.insertAdjacentElement('afterbegin', popupDiv);
+    popupDiv.style.height = (document.body.scrollHeight)+'px';
+    
+    var popupContent = document.createElement('div');
+    popupContent.setAttribute('class', 'popupContent');
+    popupDiv.insertAdjacentElement('afterbegin', popupContent);
+    popupContent.innerHTML = '<p class="popupText">' + popupNote + '</p>';
 
-        document.body.style.backgroundColor = '#ccc';
 }
 
 function addNote() {
@@ -51,6 +50,12 @@ function addNote() {
     var newDiv = document.createElement('div');
     newNote.insertAdjacentElement('beforeend', newDiv);
     
+    //создаем кнопку удаления заметки
+    var delButton = document.createElement('span');
+    newNote.insertBefore(delButton, newP);
+    delButton.setAttribute('class', 'delButton');
+    delButton.innerHTML = 'X';
+    
     //создаем тег текста и заполняем его значением
     var shortNote = document.createElement('p');
     shortNote.setAttribute('class', 'overflow-ellipsis');
@@ -69,7 +74,11 @@ function addNote() {
     newButton.innerHTML = 'Просмотреть';
 
     noteInput.value = '';
+    noteInput.style.height = '54px';
+    noteInput.style.overflowY = 'hidden';
     noteInput.focus();
+    
+    delNote(delButton);
 }
 
 function logSubmit(x) {
@@ -78,7 +87,7 @@ function logSubmit(x) {
 }
 
 function empty() {
-    if (noteGrid.nextElementSibling === null) {
+    if (noteGrid.childNodes.length === 0) {
         var emptyMsg = document.createElement('p');
         emptyMsg.setAttribute('class', 'emptyMsg');
         noteGrid.insertAdjacentElement('beforebegin', emptyMsg);
@@ -86,6 +95,24 @@ function empty() {
     }
 }
 
+//функция для закрытия всплывающего окна
+document.body.addEventListener('click', function(event) {
+    if (event.target === document.querySelector('.popup')) {
+        document.querySelector('.popup').remove();
+    }
+}
+)
+
+//функция удаления по нажатию на элемент
+function delNote(element) {
+    element.addEventListener('click', (event) => {
+        element.parentElement.remove();
+        event.stopPropagation();
+        empty();
+    })
+
+}
+
 document.addEventListener('DOMContentLoaded', elastic(noteInput));
 form.addEventListener('submit', logSubmit, empty());
-noteGrid.addEventListener('onclick', showfullNote(this));
+// noteGrid.addEventListener('onclick', showfullNote(this));

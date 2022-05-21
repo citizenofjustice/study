@@ -97,27 +97,49 @@ h1, h3{ margin: 10px 0;}
 .overflow-ellipsis{
     text-align: justify;
     margin: 5px 20px;
+    min-height: 72px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.delButton{
+    /* border: 1px solid seagreen; */
+    padding: 2px 7px;
+    float: right;
+    color: #c6c6c6;
+    font-weight: 800;
+    text-shadow: none;
+}
+.delButton:hover{ background-color: #ff3949; }
 .popup{
-    position: fixed ;
+    position: absolute ;
     background-color: rgba(0,0,0,0.5);
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    color: #ccc;
+    padding-bottom: 15px;
 }
 
 .popupContent{
     overflow:hidden;
     width: 800px;
     min-height: 200px;
-    border: 5px solid blueviolet;
+    max-height: 800px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     position: fixed ;
-    background-color: #c5c5c5;
+    background-color: #ececec;
+    overflow-y: auto;
+}
+
+.popupText{
+    margin: 20px;
+    text-align: justify;
+    text-indent: 30px;
+    color: black;
 }
