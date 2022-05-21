@@ -36,8 +36,7 @@ header{ font-size: 24pt;}
     justify-content: center;
 }
 .tmpDiv{
-    border: 1px solid purple;
-
+    border: 2px solid rgba(247, 91, 0, 0.636);
     display: inline-block;
     min-width: 100px;
     max-width: 450px;
@@ -50,6 +49,9 @@ button{
     background-color: rgba(255, 123, 0, 0.718);
     color: black;
     text-align: center;
+}
+button:hover, .delButton:hover{
+    cursor: pointer;
 }
 .noteText * button{
     font-family: 'Oswald', sans-serif;
@@ -112,7 +114,13 @@ h1, h3{ margin: 10px 0;}
     font-weight: 800;
     text-shadow: none;
 }
-.delButton:hover{ background-color: #ff3949; }
+.delButton:hover{ color:rgb(0, 0, 0); text-shadow:#ff394a 1px 0.5px; ; transition: all 0.5s; }
+
+.title{
+    margin: 10px 0 0 10px;
+    font-size: 14pt;
+    font-weight: 800;
+}
 .popup{
     position: absolute ;
     background-color: rgba(0,0,0,0.5);
@@ -121,7 +129,6 @@ h1, h3{ margin: 10px 0;}
     color: #ccc;
     padding-bottom: 15px;
 }
-
 .popupContent{
     overflow:hidden;
     width: 800px;
@@ -136,7 +143,6 @@ h1, h3{ margin: 10px 0;}
     background-color: #ececec;
     overflow-y: auto;
 }
-
 .popupText{
     margin: 20px;
     text-align: justify;

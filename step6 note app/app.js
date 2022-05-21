@@ -3,26 +3,31 @@ const noteGrid = document.querySelector('.noteGrid');
 const form = document.querySelector('.noteText');
 
 
+//динамическое поле ввода
 function elastic(element) {
     element.style.height = '5px';
     element.style.height = (element.scrollHeight)+"px";
     var currentHeight = element.style.height;   
+    //отображение скроллбара
     if (currentHeight == '54px') {
         element.style.overflowY = "hidden";
     } else element.style.overflowY = "scroll";
 }
 
+//показ полной записки
 function showfullNote(y) {
+    //получаем и записываем текст
     var textParent = y.parentElement;
     var text = textParent.parentNode;
     var popupNote = text.querySelector('.overflow-ellipsis').innerHTML;
-    // console.log(popupNote);
-    
+
+    //создаем подложку для всплывающего окна
     var popupDiv = document.createElement('div');
     popupDiv.setAttribute('class', 'popup');
     document.body.insertAdjacentElement('afterbegin', popupDiv);
     popupDiv.style.height = (document.body.scrollHeight)+'px';
     
+    //создаем блок для всплывающего окна и заполняем его полученным текстом
     var popupContent = document.createElement('div');
     popupContent.setAttribute('class', 'popupContent');
     popupDiv.insertAdjacentElement('afterbegin', popupContent);
@@ -30,7 +35,25 @@ function showfullNote(y) {
 
 }
 
+//обновление заголовков всех записок
+function noteTitle() {
+    //заносим в массив наследуемые ноды
+    var grid = noteGrid.childNodes;
+    //считаем количество записок
+    var currentLength = noteGrid.childElementCount;
+    
+    //перебираем и заполняем заголовки
+    for (let i = 0; i <= currentLength; i++) {
+        var cN = grid[i];
+        var tmp = cN.firstElementChild.nextSibling;
+        let count = i + 1;
+        tmp.innerHTML = 'Заметка №' + count;
+    }
+}
+
+//добавление записи
 function addNote() {
+    //условие для зачистки уведомления об отсутствии записей
     if (noteGrid.parentElement.firstElementChild != noteGrid) {
         noteGrid.parentElement.firstElementChild.remove()
     }
@@ -40,10 +63,11 @@ function addNote() {
     noteGrid.insertAdjacentElement('beforeend', newNote);
     noteGrid.style.padding = '20px';
 
+    
     //создаем заголовок
     var newP = document.createElement('p');
     newNote.insertAdjacentElement('beforeend', newP);
-    newP.style.textAlign = 'center';
+    newP.setAttribute('class', 'title')
     newP.innerHTML = 'Заметка №'+noteGrid.childElementCount;    
     
     //создаем блок для текста
@@ -62,6 +86,7 @@ function addNote() {
     newDiv.insertAdjacentElement('beforeend', shortNote);
     shortNote.innerHTML = noteInput.value;
     
+    //создаем блок чтобы обернуть в него кнопку
     var buttonDiv = document.createElement('div');
     newNote.insertAdjacentElement('beforeend', buttonDiv);
     buttonDiv.setAttribute('class', 'isCentered');
@@ -73,19 +98,23 @@ function addNote() {
     newButton.setAttribute('onclick', 'showfullNote(this)');
     newButton.innerHTML = 'Просмотреть';
 
+    //возврат к исходной
     noteInput.value = '';
     noteInput.style.height = '54px';
     noteInput.style.overflowY = 'hidden';
     noteInput.focus();
     
+    //вызов функции для вывода сообщения об отсутствии записей
     delNote(delButton);
 }
 
+//ожидание ввода
 function logSubmit(x) {
     x.preventDefault(); 
     addNote();
 }
 
+//функция вывода сообщения об отсутствии записей
 function empty() {
     if (noteGrid.childNodes.length === 0) {
         var emptyMsg = document.createElement('p');
@@ -109,10 +138,11 @@ function delNote(element) {
         element.parentElement.remove();
         event.stopPropagation();
         empty();
+        noteTitle();
     })
-
 }
 
-document.addEventListener('DOMContentLoaded', elastic(noteInput));
-form.addEventListener('submit', logSubmit, empty());
-// noteGrid.addEventListener('onclick', showfullNote(this));
+//выполняем после загрузки документа
+document.addEventListener('DOMContentLoaded', elastic(noteInput), empty());
+//выполняем после отправки
+form.addEventListener('submit', logSubmit);
