@@ -1,6 +1,6 @@
 const noteInput = document.getElementById('noteInput');
 const noteGrid = document.querySelector('.noteGrid');
-// const tmpDiv = document.querySelector('.tmpDiv');
+const wrapper = document.querySelector('.wrapper');
 const form = document.querySelector('.noteText');
 
 
@@ -14,15 +14,21 @@ function elastic(element) {
 }
 
 function showfullNote(x) {
-    var textParent = x.parentElement;
-    var text = textParent.parentNode;
-    var popupNote = text.querySelector('.overflow-ellipsis').innerHTML;
-    console.log(popupNote);
-    
-    var back = document.body.style;
-    back.backgroundColor = '#c0c0c0';
-    back.opacity = '0.5';
-    back.
+        var textParent = x.parentElement;
+        var text = textParent.parentNode;
+        var popupNote = text.querySelector('.overflow-ellipsis').innerHTML;
+        console.log(popupNote);
+        
+        var popupDiv = document.createElement('div');
+        popupDiv.setAttribute('class', 'popup');
+        document.body.insertAdjacentElement('afterbegin', popupDiv);
+        
+        var popupContent = document.createElement('div');
+        popupContent.setAttribute('class', 'popupContent');
+        popupDiv.insertAdjacentElement('afterbegin', popupContent);
+        popupContent.innerHTML = '<p class="popupText">' + popupNote + '</p>';
+
+        document.body.style.backgroundColor = '#ccc';
 }
 
 function addNote() {
