@@ -1,0 +1,89 @@
+/* Figma Test */
+body{
+    background: #FFDADA;
+}
+.wrapper{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: #FFFFFF;
+}
+.input{
+    position: absolute;
+    width: 1000px;
+    height: 400px;
+    left: 220px;
+    top: 61px;
+}
+.rectangle{
+    position: absolute;
+    width: 1000px;
+    height: 400px;
+    left: 0px;
+    top: 0px;
+
+    background: rgba(155, 217, 198, 0.69);
+    mix-blend-mode: normal;
+    border: 3px solid #9A2500;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 37px;
+}
+.title{
+    position: absolute;
+width: 733px;
+height: 43px;
+left: calc(50% - 733px/2 - 0.5px);
+top: calc(50% - 43px/2 - 135.5px);
+
+font-family: 'JejuGothic';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 43px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: rgba(140, 0, 0, 0.7);
+
+mix-blend-mode: normal;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.button{
+    position: absolute;
+    width: 137px;
+    height: 41px;
+    left: 432px;
+    top: 335px;
+}
+.button > span{
+    position: absolute;
+    width: 137px;
+    height: 41px;
+    left: calc(50% - 137px/2 + 0.5px);
+    top: calc(50% - 41px/2 + 155.5px);
+    
+    background: #9A4541;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.button > span > p{
+width: 99px;
+height: 24px;
+left: calc(50% - 99px/2 + 0.5px);
+top: calc(50% - 24px/2 + 156px);
+
+font-family: 'JejuGothic';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
