@@ -1,33 +1,35 @@
 $(document).ready(function(){
+    
+    const textInput = $("textarea.text");
+    const textOutput = $("textarea.result");
 
     //функция для передачи текста
     $("button.button").click(function(x){
-        // if ($("input:not(:empty)")) {
-        //     $("button").preventDefault();
-        //     // console.log('go on');
-        // }
+        if (textInput.val().trim().length < 1) {
+            alert('Введите какие-либо симовлы помимо пробелов, табуляци и переноса строки');
+        } else {
         
-        // console.log(text);
-        
-        var consonantsEn = /['bcdfghjklmnpqrstvwxyz']/gmu;
-        var consonantsRu = /['бвгджзйклмнпрстфхцчшщ']/gmu;
-        var vowelsEn = /['aeiouy']/gmu;
-        var vowelsRu = /['аяуюоеёэиы']/gmu;
+        //объекты для сравнений в RegExp
+        var consonantsEn = /['bcdfghjklmnpqrstvwxyz']/gmui;
+        var consonantsRu = /['бвгджзйклмнпрстфхцчшщ']/gmui;
+        var vowelsEn = /['aeiouy']/gmui;
+        var vowelsRu = /['аяуюоеёэиы']/gmui;
         
         //текст из текстбокса
-        var text = $("textarea.text").val() + ' ';
-        // var consonants = ;
+        var text = textInput.val() + ' ';
         
-        var letters = text.match(/(\p{L})/gmu);
-        var symbols = text.match(/\S/gm);
-        var specialCharacters = text.match(/\p{Sm}|\p{P}/gmu);
-        var words = text.match(/(\p{L}+)/gmu);
-        var sentence = text.match(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s/gm);
+        function count(e, str) {
+            x.preventDefault();
+            if (e != null) {
+                console.log(e);
+                textOutput.val("В текстовое поле введено " + e + str);
+            } else {console.log('asdasdasdasd');}
+        }
 
         // подсчет согласных
         if ($("#consonants").is(":checked")) {
-            var en = text.match(consonantsEn);
-            var ru = text.match(consonantsRu);
+            let en = text.match(consonantsEn);
+            let ru = text.match(consonantsRu);
             if (en === null) {
                 en = 0;
             } else en = en.length;
@@ -35,13 +37,12 @@ $(document).ready(function(){
                 ru = 0;
             } else ru = ru.length;
             x.preventDefault();
-            $("textarea.result").val("машина насчитала " + en + " согласных на английском языке и " + ru + " на русском языке");
+            textOutput.val("В текстовое поле введено " + en + " согласных на английском языке и " + ru + " на русском языке");
         }
-        
         // подсчет гласных
         if ($("#vowels").is(":checked")) {
-            var en = text.match(vowelsEn);
-            var ru = text.match(vowelsRu);
+            let en = text.match(vowelsEn);
+            let ru = text.match(vowelsRu);
             if (en === null) {
                 en = 0;
             } else en = en.length;
@@ -49,41 +50,41 @@ $(document).ready(function(){
                 ru = 0;
             } else ru = ru.length;
             x.preventDefault();
-            $("textarea.result").val("машина насчитала " + en + " гласных на английском языке и " + ru + " на русском языке");
+            textOutput.val("В текстовое поле введено " + en + " гласных на английском языке и " + ru + " на русском языке");
         }
         
         //подсчет букв
         if ($("#letters").is(":checked")) {
-            x.preventDefault();
-            $("textarea.result").val("машина насчитала " + letters.length + " букв");
+            let letters = text.match(/(\p{L})/gmu);
+            count(letters.length, " букв");
         }
         
         //подсчет символов
         if ($("#symbols").is(":checked")) {
-            x.preventDefault();
-            $("textarea.result").val("машина насчитала " + symbols.length + " символов");
+            let symbols = text.match(/\S/gm);
+            count(symbols.length, " символов");
         }
         
         //подсчет спецсимволов
         if ($("#specialCharacters").is(":checked")) {
-            x.preventDefault();
-            $("textarea.result").val("машина насчитала " + specialCharacters.length + " спецсимволов");
+            let specialCharacters = text.match(/\p{Sm}|\p{P}/gmu);
+            count(specialCharacters.length, " спецсимволов");
         }
         
         //подсчет слов
         if ($("#words").is(":checked")) {
-            x.preventDefault();
-            $("textarea.result").val("машина насчитала " + words.length + " слов");
+            let words = text.match(/(\p{L}+)/gmu);
+            count(words.length, " слов");
         }
         
         //подсчет предложений
         if ($("#sentence").is(":checked")) {
-            x.preventDefault();
-            $("textarea.result").val("машина насчитала " + sentence.length + " предложений");
+            let sentence = text.match(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s/gm);
+            count(sentence.length, " предложений");
         }
-        
-        
-
+                
+        textInput.focus();
+        }
     })
 
  });
