@@ -1,31 +1,38 @@
+//объявление полей ввода, вывода, radioButton
+const textInput = $("textarea.text");
+const radioB = "input:radio[name='choice']";
+//создаем невидимое поле для вывода
+$('.output').append($('<textarea></textarea>', { class: 'result', readonly: 'readonly', style: 'display: none' }));
+
 //выполнение по загрузке страницы
 $(document).ready(function(){
-    //объявление полей ввода, вывода, radioButton
-    const textInput = $("textarea.text");
-    const textOutput = $("textarea.result"); 
-    const radioB = "input:radio[name='choice']";
 
-    //добавляет всем radioButton класс filled если они заполнены
-    $(radioB).find(":checked").addClass("filled");
-    
-    //функция выбора и отмены выбора radioButton
-    $(radioB).click(function() {
-        $(this).prop("checked", false);
-        $(this).toggleClass("filled");
+    //динамическое текстовое поле
+    function elastic(element) {
+        element.on('input', function(){
+            this.style.height = '1px';
+            this.style.height = (this.scrollHeight + 6) + 'px'; 
+        });
         
-        if($(this).hasClass("filled")) {
-            $(this).prop("checked", true);
-            $(radioB).find(":checked").removeClass("filled");
-        }
-    });
+    }
+    elastic(textInput);
 
     //функция для передачи текста
     $("button.button").click(function(x){
+        //текст из текстбокса
+        
+        let textOutput = $("textarea.result");
+        textOutput.show();
+        
+        console.log(text);
         //проверка на наличеие введенных символов, если есть то приступаем к подсчету
         if (textInput.val().trim().length < 1) {
-            textOutput.val('Введите какие-либо симовлы помимо пробелов, табуляци и переноса строки');
+            textOutput.show();
+            textOutput.val('Введите какие-либо симовлы помимо пробелов, табуляци и переноса строки.');
         } else {
-        
+        let text = textInput.val() + '! ';
+        // textOutput.val('');
+
         //объекты для сравнений в RegExp
         var consonantsEn = /['bcdfghjklmnpqrstvwxyz']/gmui;
         var consonantsRu = /['бвгджзйклмнпрстфхцчшщ']/gmui;
@@ -37,41 +44,42 @@ $(document).ready(function(){
         var words = /(\p{L}+)/gmu;
         var sentence = /(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s/gm;
 
-        //текст из текстбокса
-        var text = textInput.val() + ' ';
+
         
         //функция подсчета
         function checkAndCount(statement, ...regExpN) {
             //функция для определения для сверки типов данных
             function analyseStr(e) {
-                if (e === consonantsEn) {return " согласных на английском языке; ";}
-                if (e === consonantsRu) {return " согласных на русском языке;";}
-                if (e === vowelsEn) {return " гласных на английском языке; ";}
-                if (e === vowelsRu) {return " гласных на русском языке;";}
-                if (e === letters) {return " букв;";}
-                if (e === symbols) {return " символов;";}
-                if (e === specialCharacters) {return " спецсимволов;";}
-                if (e === words) {return " слов;";}
-                if (e === sentence) {return " предложений;";}
+                if (e === consonantsEn) {return "согласных на английском языке равно ";}
+                if (e === consonantsRu) {return " и согласных на русском языке равно ";}
+                if (e === vowelsEn) {return "гласных на английском языке равно ";}
+                if (e === vowelsRu) {return " и гласных на русском языке равно ";}
+                if (e === letters) {return "букв равно ";}
+                if (e === symbols) {return "символов равно ";}
+                if (e === specialCharacters) {return "спецсимволов равно ";}
+                if (e === words) {return "слов равно ";}
+                if (e === sentence) {return "предложений равно ";}
             }
 
             //если выбран соответствующий radio
             if (statement) {
                 x.preventDefault();
                 let outputStr = '';
-                //разбор аргументов
+                //разбор аргументов функции подсчета (а именно regExp выражений)
                 for (let regExp of regExpN) {
                     let matchedStr = text.match(regExp);
                     let smt = analyseStr(regExp);
+                    //проверка на наличие совпадений введенного текста с выражение regExp
                     if (matchedStr != null) {
-                        outputStr += matchedStr.length + smt;
-                    } else { outputStr += '0 ' + smt }
+                        outputStr += smt + matchedStr.length ;
+                    } else { outputStr += smt + '0 '}
                 }
-                textOutput.val("В текстовое поле введено: " + outputStr);
+                //выводим текст в поле вывода
+                textOutput.val("В введенном вами тексте количество " + outputStr);
             }
         }
-        
 
+        //вызов функциий для подсчета
         checkAndCount($("#consonants").is(":checked"), consonantsEn, consonantsRu);
         checkAndCount($("#vowels").is(":checked"), vowelsEn, vowelsRu);
         checkAndCount($("#letters").is(":checked"), letters); 
@@ -80,10 +88,11 @@ $(document).ready(function(){
         checkAndCount($("#words").is(":checked"), words);
         checkAndCount($("#sentence").is(":checked"), sentence);
         
-                
+        //возврат фокуса в текстовое поле
         textInput.focus();
         }
     })
+});
 
- });
+
 
