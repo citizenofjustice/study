@@ -24,20 +24,15 @@ body{
 }
 
 .container{
-    /* border: 1px solid black; */
-    
     max-width: 1200px;
-    
     padding: 0 15px;
 }
 
 .wrapper{
     width: 80%;
     min-width: 250px;
-    /* background-color: blueviolet; */
 }
 .grid{
-    /* background-color: chartreuse; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 0.5rem;
@@ -85,7 +80,6 @@ h1{
 }
 p{
     color: rgb(255, 93, 93);
-    /* text-shadow: 2px 2px 2px rgb(152, 0, 25);; */
     font-weight: 200;
     font-size: 1.4rem;  text-align: center;
     margin: 0;
