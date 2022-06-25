@@ -1,4 +1,4 @@
-html{ min-width: 450px; }
+html{ min-width: 450px; min-height: 450px;}
 html, body{ height: 100%; }
 
 body{
@@ -17,6 +17,7 @@ body{
     margin-top: 50px;
     min-height: 70%;
     width: 60%;
+    min-height: 600px;
     overflow: hidden;
     border-radius: 1rem;
     border: 2px solid black;
