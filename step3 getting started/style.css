@@ -272,7 +272,7 @@ header:before{
 .main * h1{ font-family: 'Amatic SC', cursive; font-size: 3rem; padding: 1rem 0rem 0rem 0rem;}
 .main * h3{ font-size: 1.25rem; font-weight: 500;}
 .main h1, .main h3{ text-align: center; }
-.main p{ text-align: justify; font-size: 1.25rem }
+.about * p, .skills * p{ text-align: justify; font-size: 1.25rem }
 
 .avatar{ max-width: 15rem; border-radius: 50%; overflow: hidden; margin: 50px 0px; border: .1875rem solid #fff; outline: .1875rem solid #2d83e6;}
 @media (max-width: 767px) {
@@ -347,7 +347,7 @@ header:before{
     border-radius: 1.25rem;
     margin-top: 0.625rem;
 }
-.grid * p{ margin-top: .3125rem; font-size: 1rem; }
+.grid * p{ margin-top: .3125rem; }
 @media (min-width: 1012px) {   
     .grid .column:not(:nth-child(3n)) {
         margin-right: 1.25rem;
@@ -376,6 +376,9 @@ header:before{
     }
     .previewImage:before {
         padding-top: 5.625rem;
+    }
+    .previewTextTitle, .previewTextDescription{
+        font-size: .75rem;
     }
 }
 
@@ -455,23 +458,17 @@ header:before{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-
+    
 }
-  
 .previewTextTitle {
     font-weight: normal;
     text-transform: uppercase;
-    
-    font-style: 1rem;
     padding: 0 1rem;
     margin: .3125rem 0 0 0;
 }
   
 .previewTextDescription {
-    
-    font-size: 0.8rem;
     opacity: 0.7;
-
 }
   
 .previewLink {
@@ -489,6 +486,7 @@ header:before{
 .projects *{
     box-sizing: content-box;
 }
+
 
 /*---FOOTER-----------------------------------------------------------*/
 
