@@ -1,22 +1,35 @@
-#main{
-    margin: 50px auto;
-    min-height: 350px;
-    width: 600px;
+html{ height: 100%;}
+body {
+    height: 100%;
+    line-height: 1;
+}
+.wrapper{
+    margin: 3.125rem auto;
+    padding: 1.875rem 0;
+    max-width: 1000px;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: 'Oswald', sans-serif;
     background-color: rgb(150, 211, 255);
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
-#main > div{
+.wrapper > div{
     background-color:rgb(255, 195, 121);
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    width: 400px;
+    border: .125rem solid rgb(0, 0, 0);
+    border-radius: .625rem;
+    max-width: 25rem;
     padding: 10px;
 }
-
+.container{
+    /* max-width: 1000px; */
+    margin: 0px auto;
+    padding: 0px 2rem;
+    box-sizing: content-box;
+}
+.container:not(:last-child){
+    margin: 0 0 1rem 0;
+}
 #in{ margin: 10px 0; }
 #in * input{
     font-family: 'Oswald', sans-serif;

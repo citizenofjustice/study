@@ -2,6 +2,7 @@ body{
     font-family: 'Oswald', sans-serif;
     text-shadow:rgba(28, 210, 0, 0.592) 1px 1px;
     background-color: rgb(243, 243, 243);
+    min-width: 1000px;
 }
 header{ font-size: 20pt;}
 .main{
