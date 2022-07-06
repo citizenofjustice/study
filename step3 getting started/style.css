@@ -512,7 +512,7 @@ section.projects{ margin: 0 0 3.5rem 0;}
 .button.contact{
     padding: .3125rem 1.25rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .ifYouInterested{
         flex-direction: column;
         padding: 0.5rem;
