@@ -18,7 +18,7 @@ function App() {
     {
       id: "e4",
       title: "Новый стол",
-      amount: 4500,
+      amount: 14500,
       date: new Date(2021, 5, 12),
     },
   ];
