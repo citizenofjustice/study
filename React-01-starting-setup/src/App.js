@@ -1,4 +1,4 @@
-import ExpenceItem from './components/ExpenseItem';
+import ExpenceItem from './components/ExpenseItem.js';
 
 function App() {
   return (
