@@ -4,8 +4,7 @@ function ExpenseItem(props) {
   const day = props.date.toLocaleDateString("ru-RU", { day: "2-digit" });
   const month = props.date.toLocaleDateString("ru-RU", { month: "long" });
   const year = props.date.getFullYear();
-  //   const expenseTitle = "Страховка авто";
-  //   const expenseAmount = 4500;
+
 
   return (
     <div className="expense-item">
