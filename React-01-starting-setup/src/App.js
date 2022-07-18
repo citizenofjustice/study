@@ -1,7 +1,7 @@
 //import React from 'react'; //не обязательно указывать при создании через create-react-app
 import Expenses from "./components/Expenses/Expenses.js";
 
-function App() {
+const App = () => {
   const expenses = [
     { id: "e1", title: "Бумага", amount: 194.12, date: new Date(2020, 7, 14) },
     {
