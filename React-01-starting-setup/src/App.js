@@ -1,4 +1,5 @@
-import Expenses from "./components/Expenses.js";
+//import React from 'react'; //не обязательно указывать при создании через create-react-app
+import Expenses from "./components/Expenses/Expenses.js";
 
 function App() {
   const expenses = [
@@ -23,12 +24,22 @@ function App() {
     },
   ];
 
+  
+
   return (
     <div>
       <h2>Let's get started!</h2>
       <Expenses items={expenses} />
     </div>
   );
+
+  //Альтернатива return при импорте 'react'
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
 }
 
 export default App;
