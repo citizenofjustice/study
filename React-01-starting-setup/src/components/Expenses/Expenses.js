@@ -5,13 +5,10 @@ import ExpensesFilter from "../Filter/ExpensesFilter.js";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  // const pickedYearHandler = (pickedExpenseYear) => {
-  //   const yearData = pickedExpenseYear;
-  //   console.log('yearData!', yearData);
-  // };
   const [filteredYear, setFilteredYear] = useState('2020');
 
   const filterChangeHandler = selectedYear => {
+    console.log(selectedYear);
     setFilteredYear(selectedYear);
   }
 
