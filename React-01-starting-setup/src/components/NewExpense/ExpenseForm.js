@@ -51,6 +51,7 @@ const ExpenseForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+    setCurrentState(false);
   };
 
   const [currentStateDisplayed, setCurrentState] = useState(false);
