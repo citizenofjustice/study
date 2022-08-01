@@ -51,63 +51,47 @@ const ExpenseForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
-    setCurrentState(false);
-  };
-
-  const [currentStateDisplayed, setCurrentState] = useState(false);
-  const showControlsHandler = (event) => {
-    event.preventDefault();
-    if (currentStateDisplayed === false) {
-      setCurrentState(true);
-    } else setCurrentState(false);
   };
 
   return (
-    <div>
-      {currentStateDisplayed === false && (
-        <div>
-          <button onClick={showControlsHandler}>Добавить расходы</button>
+    <form onSubmit={submitHandler}>
+      <div className="new-expense__controls">
+        <div className="new-expense__control">
+          <label>Название</label>
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
-      )}
-      {currentStateDisplayed === true && (
-        <form onSubmit={submitHandler}>
-          <div className="new-expense__controls">
-            <div className="new-expense__control">
-              <label>Название</label>
-              <input
-                type="text"
-                value={enteredTitle}
-                onChange={titleChangeHandler}
-              />
-            </div>
-            <div className="new-expense__control">
-              <label>Сумма</label>
-              <input
-                type="number"
-                min="0.01"
-                step="0.01"
-                value={enteredAmount}
-                onChange={amountChangeHandler}
-              />
-            </div>
-            <div className="new-expense__control">
-              <label>Дата</label>
-              <input
-                type="date"
-                min="01-01-2019"
-                max="31-12-2022"
-                value={enteredDate}
-                onChange={dateChangeHandler}
-              />
-            </div>
-          </div>
-          <div className="new-expense__actions">
-            <button onClick={showControlsHandler} type="submit">Отмена</button>
-            <button type="submit">Добавить</button>
-          </div>
-        </form>
-      )}
-    </div>
+        <div className="new-expense__control">
+          <label>Сумма</label>
+          <input
+            type="number"
+            min="0.01"
+            step="0.01"
+            value={enteredAmount}
+            onChange={amountChangeHandler}
+          />
+        </div>
+        <div className="new-expense__control">
+          <label>Дата</label>
+          <input
+            type="date"
+            min="01-01-2019"
+            max="31-12-2022"
+            value={enteredDate}
+            onChange={dateChangeHandler}
+          />
+        </div>
+      </div>
+      <div className="new-expense__actions">
+        <button onClick={props.onCancel} type="button">
+          Отмена
+        </button>
+        <button type="submit">Добавить</button>
+      </div>
+    </form>
   );
 };
 
