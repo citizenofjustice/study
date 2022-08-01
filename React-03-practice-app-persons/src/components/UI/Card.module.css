@@ -1,0 +1,8 @@
+.card{
+    border-radius: .625rem;
+    background-color: white;
+    margin: 1rem;
+}
+:not(:last-child) {
+    margin-bottom: .625rem;
+}

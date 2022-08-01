@@ -1,0 +1,7 @@
+.button{
+    border-radius: .3125rem;
+    background-color: blueviolet;
+    color: white;
+    width: fit-content;
+    padding: .3125rem;
+}

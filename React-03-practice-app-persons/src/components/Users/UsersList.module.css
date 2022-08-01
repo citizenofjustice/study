@@ -1,0 +1,13 @@
+.usersList {
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.usersList > p {
+    border: 1px solid grey;
+    border-radius: .3125rem;
+    font-size: 1.25rem;
+    padding: .3125rem;
+}
