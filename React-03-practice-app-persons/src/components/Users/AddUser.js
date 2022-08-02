@@ -18,10 +18,17 @@ const AddUser = (props) => {
 
   const userDataHandler = (event) => {
     event.preventDefault();
-    console.log("userData", userName, userAge);
-    props.onAddUserData(userName, userAge);
-    setUserName("");
-    setUserAge("");
+    if ((userName.length === 0) || (userAge.length === 0)) {
+      const errorMessage = 'ошибочка вышла';
+      console.log(errorMessage);
+      // return errorMessage;
+    }
+    else {
+      console.log("userData", userName, userAge);
+      props.onAddUserData(userName, userAge);
+      setUserName("");
+      setUserAge("");
+    }
   };
 
   return (

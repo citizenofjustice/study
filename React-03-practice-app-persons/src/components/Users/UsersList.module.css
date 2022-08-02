@@ -5,9 +5,14 @@
     flex-direction: column;
 }
 
-.usersList > p {
+.usersList * li {
     border: 1px solid grey;
     border-radius: .3125rem;
     font-size: 1.25rem;
     padding: .3125rem;
+}
+
+.usersList ul {
+    list-style: none;
+    padding: 0;
 }
