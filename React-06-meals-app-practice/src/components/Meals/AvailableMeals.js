@@ -1,4 +1,4 @@
-import Card from "../UI/Card/Card.js";
+import Card from "../UI/Card.js";
 import MealItem from "./MealItem/MealItem.js";
 
 import styles from "./AvailableMeals.module.css";
