@@ -1,4 +1,4 @@
-import { Fragment, /*useState, useEffect,*/ Component } from "react";
+import { Fragment, Component } from "react";
 
 import Users from "./Users";
 
@@ -17,6 +17,11 @@ class UserFinder extends Component {
       filteredUsers: DUMMY_USERS,
       searchTerm: "",
     };
+  }
+
+  componentDidMount() {
+    // Send http request for example
+    this.setState({ filteredUsers: DUMMY_USERS });
   }
 
   componentDidUpdate(prevProps, prevState) {
