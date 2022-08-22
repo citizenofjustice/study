@@ -1,16 +1,16 @@
-import styles from './MealsSummary.module.css';
+import styles from "./MealsSummary.module.css";
 
 const MealsSummary = () => {
   return (
     <section className={styles.summary}>
-      <h2>Delicious Food, Delivered To You</h2>
+      <h2>Вкусная еда, с доставкой до вас</h2>
       <p>
-        Choose your favorite meal from our broad selection of available meals
-        and enjoy a delicious lunch or dinner at home.
+        Выберите свое любимое блюдо из нашего списка доступных блюд и
+        насладитесь вкусным обедом или ужином дома.
       </p>
       <p>
-        All our meals are cooked with high-quality ingredients, just-in-time and
-        of course by experienced chefs!
+        Все наши блюда готовятся мастерами своего дела из высококачественных
+        ингредиентов и доставляется до вас точно в срок!
       </p>
     </section>
   );

@@ -9,7 +9,7 @@ import styles from "./Cart.module.css";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `${cartCtx.totalAmount.toFixed(2)} руб.`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
@@ -39,14 +39,14 @@ const Cart = (props) => {
     <Modal onClose={props.onClose}>
       {cartItems}
       <div className={styles.total}>
-        <span>Total Amount</span>
+        <span>Общее количество</span>
         <span>{totalAmount}</span>
       </div>
       <div className={styles.actions}>
         <button className={styles["button--alt"]} onClick={props.onClose}>
-          Close
+          Закрыть
         </button>
-        {hasItems && <button className={styles.button}>Order</button>}
+        {hasItems && <button className={styles.button}>Заказать</button>}
       </div>
     </Modal>
   );

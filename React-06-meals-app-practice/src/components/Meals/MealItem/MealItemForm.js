@@ -38,8 +38,8 @@ const MealItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button>+ Add</button>
-      {!amountIsValid && <p>Please enter a valid number</p>}
+      <button>+ Добавить</button>
+      {!amountIsValid && <p>Просьба ввести допустимое количество</p>}
     </form>
   );
 };
