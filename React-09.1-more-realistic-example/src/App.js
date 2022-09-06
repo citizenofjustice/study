@@ -7,24 +7,24 @@ import useHttp from "./hooks/use-http";
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  const transformTasks = (taskObj) => {
-    const loadedTasks = [];
+  const { isLoading, error, sendRequest: fetchTasks } = useHttp();
+  
+    useEffect(() => {
+      const transformTasks = (taskObj) => {
+        const loadedTasks = [];
+    
+        for (const taskKey in taskObj) {
+          loadedTasks.push({ id: taskKey, text: taskObj[taskKey].text });
+        }
+    
+        setTasks(loadedTasks);
+      };
 
-    for (const taskKey in taskObj) {
-      loadedTasks.push({ id: taskKey, text: taskObj[taskKey].text });
-    }
-
-    setTasks(loadedTasks);
-  };
-
-  const { isLoading, error, sendRequest: fetchTasks } = useHttp(
-    { url: 'https://customhooks-66053-default-rtdb.europe-west1.firebasedatabase.app/tasks.json' },
-    transformTasks
-  );
-
-  useEffect(() => {
-    fetchTasks();
-  }, []);
+      fetchTasks(
+        { url: "https://customhooks-66053-default-rtdb.europe-west1.firebasedatabase.app/tasks.json" },
+        transformTasks
+      );
+    }, [fetchTasks]);
 
   const taskAddHandler = (task) => {
     setTasks((prevTasks) => prevTasks.concat(task));
