@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SimpleInput = (props) => {
+const SimpleInput = () => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 
@@ -9,7 +9,8 @@ const SimpleInput = (props) => {
 
   const enteredNameIsValid = enteredName.trim() !== "";
   const eMailRegex = /.+@.+/g;
-  const enteredEMailIsValid = enteredEMail.trim() !== "" && eMailRegex.test(enteredEMail);
+  const enteredEMailIsValid =
+    enteredEMail.trim() !== "" && eMailRegex.test(enteredEMail);
 
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
   const eMailInputIsInvalid = !enteredEMailIsValid && enteredEMailTouched;
@@ -24,7 +25,7 @@ const SimpleInput = (props) => {
     setEnteredName(event.target.value);
   };
 
-  const nameInputBlureHandler = (event) => {
+  const nameInputBlureHandler = () => {
     setEnteredNameTouched(true);
   };
 
@@ -32,7 +33,7 @@ const SimpleInput = (props) => {
     setEnteredEMail(event.target.value);
   };
 
-  const eMailInputBlureHandler = (event) => {
+  const eMailInputBlureHandler = () => {
     setEnteredEMailTouched(true);
   };
 
@@ -47,8 +48,10 @@ const SimpleInput = (props) => {
     }
 
     console.log(enteredName);
+    console.log(enteredEMail);
 
     setEnteredName("");
+    setEnteredEMail("");
     setEnteredNameTouched(false);
     setEnteredEMailTouched(false);
   };
@@ -75,7 +78,7 @@ const SimpleInput = (props) => {
       <div className={nameInputClasses}>
         <label htmlFor="email">Your E-mail</label>
         <input
-          type="text"
+          type="email"
           id="email"
           onChange={eMailInputChangeHandler}
           onBlur={eMailInputBlureHandler}
