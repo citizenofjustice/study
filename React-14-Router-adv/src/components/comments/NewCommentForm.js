@@ -1,6 +1,6 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
-import classes from './NewCommentForm.module.css';
+import styles from "./NewCommentForm.module.css";
 
 const NewCommentForm = (props) => {
   const commentTextRef = useRef();
@@ -14,13 +14,13 @@ const NewCommentForm = (props) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={submitFormHandler}>
-      <div className={classes.control} onSubmit={submitFormHandler}>
-        <label htmlFor='comment'>Your Comment</label>
-        <textarea id='comment' rows='5' ref={commentTextRef}></textarea>
+    <form className={styles.form} onSubmit={submitFormHandler}>
+      <div className={styles.control} onSubmit={submitFormHandler}>
+        <label htmlFor="comment">Your Comment</label>
+        <textarea id="comment" rows="5" ref={commentTextRef}></textarea>
       </div>
-      <div className={classes.actions}>
-        <button className='btn'>Add Comment</button>
+      <div className={styles.actions}>
+        <button className="btn">Add Comment</button>
       </div>
     </form>
   );
