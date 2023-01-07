@@ -1,0 +1,35 @@
+.header {
+  background-color: rgb(35, 155, 121);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.header a {
+  text-decoration: none;
+}
+.home {
+  margin-left: 1rem;
+}
+.header ul {
+  list-style-type: none;
+  display: inline-block;
+}
+.nav-item {
+  display: inline;
+  margin: 0 1rem;
+}
+.header a:link,
+.header a:visited {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: aliceblue;
+}
+.header a:hover {
+  color: rgb(181, 251, 181);
+}
+.header a.active {
+  border-bottom: 3px solid rgb(145, 217, 192);
+  color: rgb(181, 251, 181);
+}
