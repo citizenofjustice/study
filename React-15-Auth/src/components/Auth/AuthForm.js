@@ -51,23 +51,30 @@ const AuthForm = () => {
         if (res.ok) {
           return res.json();
         } else {
-          res.json().then((data) => {
-            // show an error modal
-            let errorMessage = "Authentication failed!";
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
-            }
-            alert(errorMessage);
-            throw new Error(errorMessage);
-          });
+          res
+            .json()
+            .then((data) => {
+              let errorMessage = "Authentication failed!";
+              if (data && data.error && data.error.message) {
+                errorMessage = data.error.message;
+              }
+              throw new Error(errorMessage);
+            })
+            .catch((err) => {
+              alert(err.message);
+            });
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
-        history.replace("/");
+        if (data) {
+          const expiresIn = +data.expiresIn * 1000;
+          const expirationTime = new Date(new Date().getTime() + expiresIn);
+          authCtx.login(data.idToken, expirationTime.toISOString());
+          history.replace("/");
+        }
       })
       .catch((err) => {
-        alert(err.message);
+        throw new Error(err.message);
       });
   };
 
