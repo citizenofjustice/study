@@ -1,5 +1,16 @@
+import Link from "next/link";
+
 function NewsPage() {
-  return <h1>The news page</h1>;
+  return (
+    <>
+      <ul>
+        <li>
+          <Link href="/news/nextjs-is-a-great-framework">NextJS is great!</Link>
+        </li>
+        <li>Some text</li>
+      </ul>
+    </>
+  );
 }
 
 export default NewsPage;
