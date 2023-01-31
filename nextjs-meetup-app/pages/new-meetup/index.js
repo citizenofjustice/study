@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 
 function NewMeetupPage() {
-  const router = useRouter();
+  // const router = useRouter();
 
   async function addMeetupHandler(enteredMeetupData) {
     try {
@@ -14,16 +14,17 @@ function NewMeetupPage() {
           "Content-Type": "application/json",
         },
       });
+      console.log(response);
       if (!response.ok) {
-        throw new Error(response.statusText);
+        console.log(response.statusText);
       }
       const data = await response.json();
 
       console.log(data);
 
-      router.push("/");
+      // router.push("/");
     } catch (error) {
-      throw new Error(error.message);
+      console.log(error.message);
     }
   }
 
