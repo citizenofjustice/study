@@ -1,23 +1,28 @@
+import { MongoClient } from "mongodb";
+
+// dbConnectUrl is private (ignored by git)
+import { dbConnectUrl } from "./api/private/dbConnectUrl";
+
 import MeetupList from "../components/meetups/MeetupList";
 
-const DUMMY_MEETUPS = [
-  {
-    id: "m1",
-    title: "a first meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/SanMiniatoAlMonte-Cimetiere.jpg/1024px-SanMiniatoAlMonte-Cimetiere.jpg",
-    adress: "Some adress 5, 123123 Some city",
-    description: "This is a first meetup!",
-  },
-  {
-    id: "m2",
-    title: "a second meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/SanMiniatoAlMonte-Cimetiere.jpg/1024px-SanMiniatoAlMonte-Cimetiere.jpg",
-    adress: "Some adress 5, 321321 Some city",
-    description: "This is a second meetup!",
-  },
-];
+// const DUMMY_MEETUPS = [
+//   {
+//     id: "m1",
+//     title: "a first meetup",
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/SanMiniatoAlMonte-Cimetiere.jpg/1024px-SanMiniatoAlMonte-Cimetiere.jpg",
+//     adress: "Some adress 5, 123123 Some city",
+//     description: "This is a first meetup!",
+//   },
+//   {
+//     id: "m2",
+//     title: "a second meetup",
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/SanMiniatoAlMonte-Cimetiere.jpg/1024px-SanMiniatoAlMonte-Cimetiere.jpg",
+//     adress: "Some adress 5, 321321 Some city",
+//     description: "This is a second meetup!",
+//   },
+// ];
 
 function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
@@ -38,9 +43,25 @@ function HomePage(props) {
 
 export async function getStaticProps() {
   // fetch data from an API
+  const client = await MongoClient.connect(dbConnectUrl);
+  const db = client.db();
+
+  const meetupsCollection = db.collection("meetups");
+
+  const meetups = await meetupsCollection.find().toArray();
+
+  console.log(meetups);
+
+  client.close();
+
   return {
     props: {
-      meetups: DUMMY_MEETUPS,
+      meetups: meetups.map((meetup) => ({
+        title: meetup.data.title,
+        address: meetup.data.address,
+        image: meetup.data.image,
+        id: meetup._id.toString(),
+      })),
     },
     revalidate: 1,
   };
