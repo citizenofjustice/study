@@ -1,9 +1,6 @@
 import Head from "next/head";
 import { MongoClient } from "mongodb";
 
-// dbConnectUrl is private (ignored by git)
-import { dbConnectUrl } from "./api/private/dbConnectUrl";
-
 import MeetupList from "../components/meetups/MeetupList";
 
 // const DUMMY_MEETUPS = [

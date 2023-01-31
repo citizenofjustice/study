@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { MongoClient, ObjectId } from "mongodb";
 
-import { dbConnectUrl } from "../api/private/dbConnectUrl";
-
 import MeetupDetail from "../../components/meetups/MeetupDetail";
 
 function MeetupDetails(props) {
