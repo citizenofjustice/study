@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { MongoClient } from "mongodb";
 
 // dbConnectUrl is private (ignored by git)
@@ -25,7 +26,15 @@ import MeetupList from "../components/meetups/MeetupList";
 // ];
 
 function HomePage(props) {
-  return <MeetupList meetups={props.meetups} />;
+  return (
+    <>
+      <Head>
+        <title>NextJS Meetups</title>
+        <meta name="description" content="Brows list of meetups" />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </>
+  );
 }
 
 // export async function getServerSideProps(context) {
