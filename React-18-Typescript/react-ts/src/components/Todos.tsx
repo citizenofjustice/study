@@ -1,10 +1,19 @@
-function Todos() {
+import React from "react";
+
+// React >= v18 syntax
+interface Props {
+  // children: React.ReactNode;
+  items: string[];
+}
+
+const Todos: React.FC<Props> = ({ items }) => {
   return (
     <ul>
-      <li>Learn React</li>
-      <li>Learn Typescript</li>
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
     </ul>
   );
-}
+};
 
 export default Todos;
