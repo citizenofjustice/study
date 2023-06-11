@@ -10,7 +10,6 @@
 }
 
 .App {
-  margin-top: 50px;
   width: 800px;
 }
 
@@ -22,4 +21,18 @@
   margin-top: 15px;
   justify-content: space-between;
   align-items: center;
+}
+
+.post-enter {
+  transform: translateX(-350px);
+}
+.post-enter-active {
+  transform: translateX(0);
+  transition: all 500ms ease-in;
+}
+.post-exit {
+}
+.post-exit-active {
+  transform: translateX(-350px);
+  transition: all 500ms ease-in;
 }
