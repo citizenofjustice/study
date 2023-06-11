@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
 import "./styles/App.css";
 import PostFiler from "./components/PostFilter";
 import MyModal from "./components/UI/MyModal/MyModal";
 import MyButton from "./components/UI/button/MyButton";
+import { usePosts } from "./hooks/usePost";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -17,21 +18,7 @@ function App() {
     query: "",
   });
   const [modal, setModal] = useState(false);
-
-  const sortedPosts = useMemo(() => {
-    if (filter.sort) {
-      return [...posts].sort((a, b) =>
-        a[filter.sort].localeCompare(b[filter.sort])
-      );
-    }
-    return posts;
-  }, [filter.sort, posts]);
-
-  const sortedAndSearchedPosts = useMemo(() => {
-    return sortedPosts.filter((post) =>
-      post.title.toLowerCase().includes(filter.query.toLowerCase())
-    );
-  }, [filter.query, sortedPosts]);
+  const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
   const addNewPost = (post) => {
     setPosts([...posts, { ...post, id: Date.now() }]);
@@ -50,7 +37,6 @@ function App() {
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm onAddPost={addNewPost} />
       </MyModal>
-
       <hr style={{ margin: "15px 0" }} />
       <PostFiler filter={filter} setFilter={setFilter} />
       <PostList
