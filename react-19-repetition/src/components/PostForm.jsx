@@ -5,7 +5,7 @@ import MyButton from "./UI/button/MyButton";
 const PostForm = (props) => {
   const [post, setPost] = useState({
     title: "",
-    description: "",
+    body: "",
   });
 
   const addNewPostHandler = (e) => {
@@ -13,7 +13,7 @@ const PostForm = (props) => {
     props.onAddPost(post);
     setPost({
       title: "",
-      description: "",
+      body: "",
     });
   };
 
@@ -27,8 +27,8 @@ const PostForm = (props) => {
           placeholder="Название поста"
         />
         <MyInput
-          value={post.description}
-          onChange={(e) => setPost({ ...post, description: e.target.value })}
+          value={post.body}
+          onChange={(e) => setPost({ ...post, body: e.target.value })}
           type="text"
           placeholder="Описание поста"
         />
