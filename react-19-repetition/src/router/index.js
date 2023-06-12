@@ -10,6 +10,10 @@ export const privateRoutes = [
     path: "/",
     component: <Navigate replace to="/posts" />,
   },
+  {
+    path: "/login",
+    component: <Navigate replace to="/posts" />,
+  },
   { path: "/about", component: <About /> },
   { path: "/posts", component: <Posts /> },
   { path: "/posts/:id", component: <PostIdPage /> },
