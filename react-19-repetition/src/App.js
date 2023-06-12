@@ -6,11 +6,13 @@ import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
 import PostFiler from "./components/PostFilter";
 import PostService from "./API/PostService";
+import { getPageCount } from "./utils/pages";
 
 import MyModal from "./components/UI/MyModal/MyModal";
 import MyButton from "./components/UI/button/MyButton";
 import Loader from "./components/UI/Loader/Loader";
 import "./styles/App.css";
+import Pagination from "./components/UI/pagination/Pagination";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -19,14 +21,21 @@ function App() {
     query: "",
   });
   const [modal, setModal] = useState(false);
+  const [totalPages, setTotalPages] = useState(0);
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
-  const [fetchPosts, isPostLoading, postError] = useFetching(async () => {
-    const posts = await PostService.getAll();
-    setPosts(posts);
-  });
+  const [fetchPosts, isPostLoading, postError] = useFetching(
+    async (limit, page) => {
+      const response = await PostService.getAll(limit, page);
+      setPosts(response.data);
+      const totalCount = response.headers["x-total-count"];
+      setTotalPages(getPageCount(totalCount, limit));
+    }
+  );
 
   useEffect(() => {
-    fetchPosts();
+    fetchPosts(limit, page);
   }, []);
 
   const addNewPost = (post) => {
@@ -38,10 +47,14 @@ function App() {
     setPosts(posts.filter((post) => post.id !== id));
   };
 
+  const changePage = (page) => {
+    setPage(page);
+    fetchPosts(limit, page);
+  };
+
   return (
     <div className="App">
-      <button onClick={fetchPosts}>GET POSTS</button>
-      <MyButton style={{ marginTop: "30px" }} onClick={(e) => setModal(true)}>
+      <MyButton style={{ marginTop: "30px" }} onClick={() => setModal(true)}>
         Создать пользователя
       </MyButton>
       <MyModal visible={modal} setVisible={setModal}>
@@ -67,6 +80,7 @@ function App() {
           title="Посты про JS"
         />
       )}
+      <Pagination totalPages={totalPages} page={page} changePage={changePage} />
     </div>
   );
 }
