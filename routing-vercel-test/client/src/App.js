@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Layout from "./Layout";
 
 function Home() {
   return (
@@ -15,19 +16,15 @@ function Home() {
 
 function BlogApp() {
   return (
-    <Routes>
-      <Route
-        index
-        element={
-          <div>
-            <h1>Blog Index</h1>
-            <Link to="/">Main</Link>
-            <Link to="/users">users</Link>
-          </div>
-        }
-      />
-      <Route path="posts" element={<h1>Blog Posts</h1>} />
-    </Routes>
+    <div>
+      <h1>Blog Index</h1>
+      <br />
+      <Link to="/">Main</Link>
+      <br />
+      <Link to="/blog/posts">posts</Link>
+      <br />
+      <Link to="/users">users</Link>
+    </div>
   );
 }
 
@@ -43,9 +40,23 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blog/*" element={<BlogApp />} />
-        <Route path="/users/*" element={<UserApp />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blog">
+            <Route index element={<BlogApp />} />
+            <Route
+              path="posts"
+              element={
+                <div>
+                  <h1>this is posts</h1>
+                  <br />
+                  <Link to="/">Main</Link>
+                </div>
+              }
+            />
+          </Route>
+          <Route path="users" element={<UserApp />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
