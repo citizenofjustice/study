@@ -16,7 +16,16 @@ function Home() {
 function BlogApp() {
   return (
     <Routes>
-      <Route index element={<h1>Blog Index</h1>} />
+      <Route
+        index
+        element={
+          <div>
+            <h1>Blog Index</h1>
+            <Link to="/">Main</Link>
+            <Link to="/users">users</Link>
+          </div>
+        }
+      />
       <Route path="posts" element={<h1>Blog Posts</h1>} />
     </Routes>
   );
