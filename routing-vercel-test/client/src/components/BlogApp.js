@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const BlogApp = () => {
   const callToPosts = async () => {
-    const result = await fetch("http://localhost:3000/blog/posts");
+    const result = await fetch("https://study-92pr.vercel.app/blog/posts");
     console.log(result);
   };
 
