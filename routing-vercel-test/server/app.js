@@ -1,17 +1,24 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
+app.use(cors());
+
+app.get("/", async (req, res) => {
+  console.log("Hello from Node");
   res.send("Hello from Node!");
 });
-app.get("/blog", (req, res) => {
+app.get("/blog", async (req, res) => {
+  console.log("Hello blog");
   res.send("read blog");
 });
-app.get("/blog/posts", (req, res) => {
+app.get("/blog/posts", async (req, res) => {
+  console.log("Hello posts");
   res.send("see posts");
 });
-app.get("/user", (req, res) => {
+app.get("/users", async (req, res) => {
+  console.log("Hello users page");
   res.send("users page");
 });
 
